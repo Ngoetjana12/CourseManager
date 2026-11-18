@@ -7,5 +7,4 @@ public interface CourseRepository extends JpaRepository<Course, Long> {
 
     Course getCourseById(Long id);
     Course changeVenue(Long id);
-
 }

@@ -15,21 +15,20 @@ public class CourseService {
         this.courseRepository = courseRepository;
     }
 
-    public Course createCourse(Course course){
+    public Course createCourse(Course course) {
         return courseRepository.save(course);
     }
 
-    public List<Course> getAllCourses(){
+    public List<Course> getAllCourses() {
         return courseRepository.findAll();
     }
-    public Course getCourseById(Long id){
-        Course course = courseRepository.getCourseById(id);
-        return course;
-    }
-    public void deleteCourse(Long id){
 
-        Course course = courseRepository.getCourseById(id);
-        courseRepository.delete(course);
-        }
+    public Course getCourseById(Long id) {
+        return courseRepository.findById(id).orElse(null);
+    }
+
+    public void deleteCourse(Long id) {
+
+        courseRepository.deleteById(id);
     }
 }
