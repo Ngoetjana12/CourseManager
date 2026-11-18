@@ -4,6 +4,8 @@ import com.mecerintered.coursemanager.entity.Course;
 import com.mecerintered.coursemanager.repository.CourseRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CourseService {
 
@@ -15,5 +17,13 @@ public class CourseService {
 
     public Course createCourse(Course course){
         return courseRepository.save(course);
+    }
+
+    public List<Course> getAllCourses(){
+        return courseRepository.findAll();
+    }
+    public Course getCourseById(Long id){
+        Course course = courseRepository.getCourseById(id);
+        return course;
     }
 }
