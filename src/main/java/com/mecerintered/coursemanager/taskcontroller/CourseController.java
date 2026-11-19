@@ -35,9 +35,9 @@ public class CourseController {
     }
 
     @PutMapping("/{id}")
-    public Course updateCourse(@PathVariable Long id) {
+    public Course updateCourse(@PathVariable Long id, @RequestParam String newVenue) {
 
-        return courseService.updateCourseVenue(id);
+        return courseService.changeCourseVenue(id, newVenue);
     }
 
     @DeleteMapping("/delete/{id}")

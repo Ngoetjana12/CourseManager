@@ -27,9 +27,15 @@ public class CourseService {
         return courseRepository.findById(id).orElse(null);
     }
 
-    public Course updateCourseVenue(Long id) {
+    public Course changeCourseVenue(Long id, String newVenue) {
 
-        return courseRepository.updateCourseVenue(id);
+        Course course = courseRepository.findById(id).orElse(null);
+        if(course == null){
+
+            return null;
+        }
+        course.setCourseVenue(newVenue);
+        return courseRepository.save(course);
     }
 
     public void deleteCourse(Long id) {
