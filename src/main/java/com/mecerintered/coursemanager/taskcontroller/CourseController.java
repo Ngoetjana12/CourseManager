@@ -34,14 +34,14 @@ public class CourseController {
         return courseService.getCourseById(id);
     }
 
-    @PutMapping
-    public Course updateCourse(Long id) {
+    @PutMapping("/{id}")
+    public Course updateCourse(@PathVariable Long id) {
 
         return courseService.updateCourseVenue(id);
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteCourse(Long id) {
+    public void deleteCourse(@PathVariable Long id) {
 
         courseService.deleteCourse(id);
     }
