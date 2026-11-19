@@ -27,6 +27,11 @@ public class CourseService {
         return courseRepository.findById(id).orElse(null);
     }
 
+    public Course updateCourseVenue(Long id) {
+
+        return courseRepository.updateCourseVenue(id);
+    }
+
     public void deleteCourse(Long id) {
 
         courseRepository.deleteById(id);
